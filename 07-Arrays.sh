@@ -2,5 +2,5 @@
 
 MOVIES=("Inception" "Interstellar" "The Dark Knight" "Memento")
 
-echo "Firest Movie: ${MOVIES[0]]}"
+echo "Firest Movie: ${MOVIES[0]}"
 

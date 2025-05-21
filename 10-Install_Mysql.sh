@@ -7,3 +7,4 @@ then
     echo "Error :: You Must be root user to run this script"
 fi
 dnf insatll mysql -y
+exit1

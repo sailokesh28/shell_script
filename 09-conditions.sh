@@ -6,6 +6,6 @@ then
     echo "Number is greater than 100"
     else
     echo "Number is less than or equal to 100"
-else
+    else
     echo "Number is less than 100"
 fi

@@ -18,16 +18,16 @@ LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
 # Validate Functions
 VALIDATE(){
    if [ $1 -ne 0 ]
-then 
-    echo -e "$2.....$R Failure $N"
-    exit 1
-else
-    echo -e "$2.....$G Success $N"
-fi 
+    then 
+        echo -e "$2.....$R Failure $N"
+        exit 1
+    else
+        echo -e "$2.....$G Success $N"
+    fi 
 }
 
 
-echo "Script Started Executing at : $TIMESTAMP" &>> $LOG_FILE_NAME
+    echo "Script Started Executing at : $TIMESTAMP" &>> $LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
 then
@@ -40,9 +40,9 @@ do
     dnf list insatlled $pacakage &>> $LOG_FILE_NAME
     if [ $? -ne 0 ] # not installed
     then
-    dnf install $pacakage -y &>> $LOG_FILE_NAME
-    VALIDATE $? "Insatlling $pacakage"
+        dnf install $pacakage -y &>> $LOG_FILE_NAME
+        VALIDATE $? "Insatlling $pacakage"
     else 
-    echo -e "$pacakage is already $Y Installed $N"
+        echo -e "$pacakage is already $Y Installed $N"
     fi
 done

@@ -34,14 +34,14 @@ then
     exit 1 #other than 0
 fi
 
-for pacakege in $@
+for packege in $@
 do
-    dnf list installed $pacakage &>> $LOG_FILE_NAME
+    dnf list installed $package &>> $LOG_FILE_NAME
     if [ $? -ne 0 ] # not installed
     then
-        dnf install $pacakage -y &>> $LOG_FILE_NAME
-        VALIDATE $? "Instaling $pacakage"
+        dnf install $package -y &>> $LOG_FILE_NAME
+        VALIDATE $? "Installing $package"
     else 
-        echo -e "$pacakage is already $Y Installed $N"
+        echo -e "$package is already $Y Installed $N"
     fi
 done

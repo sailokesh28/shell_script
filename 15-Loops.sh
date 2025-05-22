@@ -1,5 +1,4 @@
 #!bin/bash
-
 USERID=$(id -u)
 
 # Colors
@@ -37,11 +36,11 @@ fi
 
 for pacakege in $@
 do
-    dnf list insatlled $pacakage &>> $LOG_FILE_NAME
+    dnf list installed $pacakage &>> $LOG_FILE_NAME
     if [ $? -ne 0 ] # not installed
     then
         dnf install $pacakage -y &>> $LOG_FILE_NAME
-        VALIDATE $? "Insatlling $pacakage"
+        VALIDATE $? "Instaling $pacakage"
     else 
         echo -e "$pacakage is already $Y Installed $N"
     fi
